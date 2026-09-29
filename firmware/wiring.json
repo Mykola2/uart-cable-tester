@@ -1,0 +1,31 @@
+{
+  "_help": [
+    "Expected cable wiring. Pins: H1..H40 = RPi 40-pin header (RPi numbering), T1.1..T3.6 = TELEM1..3 JST-GH pin 1..6.",
+    "Every pin NOT listed in a net must be unconnected. Nets may have more than 2 pins.",
+    "any_of: pins that are common on the Pi. A net entry naming a group (e.g. PI_GND) passes on ANY pin of that group.",
+    "leds: which JST pin each of the 9 wire LEDs (D1..D9) reports, in board order.",
+    "PLACEHOLDER MAP - confirm against your cable drawing, or plug in a known-good cable and hold the button 3 s (learn)."
+  ],
+  "any_of": {
+    "PI_GND": ["H6", "H9", "H14", "H20", "H25", "H30", "H34", "H39"],
+    "PI_5V":  ["H2", "H4"],
+    "PI_3V3": ["H1", "H17"]
+  },
+  "nets": {
+    "T1_TX":  ["T1.2", "H10"],
+    "T1_RX":  ["T1.3", "H8"],
+    "T1_GND": ["T1.6", "PI_GND"],
+    "T2_TX":  ["T2.2", "H29"],
+    "T2_RX":  ["T2.3", "H7"],
+    "T2_GND": ["T2.6", "PI_GND"],
+    "T3_TX":  ["T3.2", "H33"],
+    "T3_RX":  ["T3.3", "H32"],
+    "T3_GND": ["T3.6", "PI_GND"]
+  },
+  "leds": ["T1.2", "T1.3", "T1.6", "T2.2", "T2.3", "T2.6", "T3.2", "T3.3", "T3.6"],
+  "pass_stable_s": 0.3,
+  "fail_stable_s": 3.0,
+  "glitch_window_s": 2.0,
+  "idle_after_s": 1.0,
+  "brightness": 0.15
+}

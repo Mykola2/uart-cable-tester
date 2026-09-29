@@ -1,0 +1,13 @@
+# KiCad local/temporary files
+*.lck
+*.kicad_prl
+fp-info-cache
+*-backups/
+*.before-*.kicad_pcb
+*.rpt
+# Freerouting intermediates
+*.dsn
+*.ses
+*.rules
+# Python
+__pycache__/
